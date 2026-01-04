@@ -180,19 +180,19 @@ python run_demo.py
 👮 [Interviewer]: Welcome! I'll be conducting your technical interview today.
                   Could you tell me about your experience with Python?
 
-あなた (回答を入力): I've worked with FastAPI and Django for 3 years.
+you (put your answer here): I've worked with FastAPI and Django for 3 years.
 
-   (tool: retrieve_job_requirements を実行中...)
-   (tool: manage_memory を実行中...)
+   (tool: retrieve_job_requirements is running...)
+   (tool: manage_memory is running...)
 
 👮 [Interviewer]: Great! Can you describe a challenging project?
 
-   (tool: transfer_to_review_agent を実行中...)
+   (tool: transfer_to_review_agent is running...)
 
 👨‍⚖️ [Reviewer]: Insufficient depth on cloud experience.
                  Sending back for follow-up questions.
 
-   (tool: transfer_to_interview_agent を実行中...)
+   (tool: transfer_to_interview_agent is running...)
 
 👮 [Interviewer]: I'd like to know more about your AWS experience...
 ```
