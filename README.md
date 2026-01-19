@@ -1,4 +1,4 @@
-# 🤖 LangGraph Adaptive Interviewer
+# LangGraph Adaptive Interviewer
 
 > **A Self-Correcting Multi-Agent System with Dynamic Prompt Optimization**
 
@@ -6,7 +6,7 @@ A production-grade demonstration of **Multi-Agent Orchestration** where autonomo
 
 ---
 
-## 🎯 Why This Project Stands Out
+## Why This Project Stands Out
 
 | Aspect | Typical Tutorial Code | This Implementation |
 |--------|----------------------|---------------------|
@@ -18,7 +18,7 @@ A production-grade demonstration of **Multi-Agent Orchestration** where autonomo
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 ```mermaid
 graph TD
     subgraph UserInterface["User Interface Layer"]
@@ -32,14 +32,14 @@ graph TD
     end
 
     subgraph Intelligence["Intelligence Layer"]
-        Memory[("🧠 Semantic Memory<br/>LangMem Store")]
-        RAG["📚 Job Requirements<br/>Mock RAG"]
+        Memory[("Semantic Memory<br/>LangMem Store")]
+        RAG["Job Requirements<br/>Mock RAG"]
         Optimizer["⚡ Prompt Optimizer"]
     end
 
     subgraph Safety["Safety Layer"]
-        Guard{"🛡️ Loop Guard<br/>count > 3?"}
-        ForceEnd((🚫 Force End))
+        Guard{" Loop Guard<br/>count > 3?"}
+        ForceEnd((Force End))
     end
 
     User -->|"Q&A"| Interviewer
@@ -62,9 +62,9 @@ graph TD
 
 ---
 
-## ✨ Technical Deep Dive
+## Technical Deep Dive
 
-### 1. 🔄 Bidirectional Agent Feedback Loop
+### 1. Bidirectional Agent Feedback Loop
 
 Unlike simple "A → B → End" flows, this system implements **true self-correction**:
 
@@ -83,11 +83,11 @@ The Review Agent doesn't just accept whatever the Interviewer provides. It **act
 if isinstance(last_msg, AIMessage) and last_msg.tool_calls:
     return Command(
         update={**response, "last_agent": "review_agent", "loop_count": loop_count + 1},
-        goto="interview_agent"  # 🔄 Rejection & Loop Back!
+        goto="interview_agent"  # Rejection & Loop Back!
     )
 ```
 
-### 2. 🧠 Dynamic Prompt Optimization (LangMem)
+### 2. Dynamic Prompt Optimization (LangMem)
 
 The system **learns from its own interactions**. The Review Agent analyzes past conversation trajectories and dynamically improves its analytical prompts:
 
@@ -108,7 +108,7 @@ response = await self._review_agent.ainvoke({**state, "messages": modified_messa
 
 **Key Insight**: The optimized `SystemMessage` is injected at the **top of the message stack**, effectively "reprogramming" the agent's behavior mid-session.
 
-### 3. 📐 Semantic Triple Memory
+### 3. Semantic Triple Memory
 
 Candidate information is stored not as raw text, but as **structured knowledge graphs**:
 
@@ -150,7 +150,7 @@ return Command(goto="interview_agent", update={...})
 
 ---
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
